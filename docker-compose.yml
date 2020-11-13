@@ -17,7 +17,7 @@ services:
         - MYSQL_PASSWORD=abc_password
       ports:
         - "8002:3306"
-      command: ["--default-authentication-plugin=mysql_native_password"]
+      cmd: ["--default-authentication-plugin=mysql_native_password"]
 
     webserver:
       image: nginx:alpine

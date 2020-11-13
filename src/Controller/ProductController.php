@@ -17,7 +17,7 @@ class ProductController extends AbstractFOSRestController
     {
         $logger->info('I just got the logger');
 
-        $entityManager = $this->getDoctrine()->getManager();
+        // $entityManager = $this->getDoctrine()->getManager();
 
         // $product = new Product();
         // $product->setName('Keyboard');
@@ -26,7 +26,7 @@ class ProductController extends AbstractFOSRestController
         // // tell Doctrine you want to (eventually) save the Product (no queries yet)
         // $entityManager->persist($product);
 
-        // actually executes the queries (i.e. the INSERT query)
+        // // actually executes the queries (i.e. the INSERT query)
         // $entityManager->flush();
 
 
