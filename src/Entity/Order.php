@@ -44,9 +44,9 @@ class Order
         return $this->id;
     }
 
-    public function getProduct(): ?Product
+    public function getProduct()
     {
-        return $this->product;
+        return $this->product->getId();
     }
 
     public function setProduct(?Product $product): self
@@ -80,9 +80,9 @@ class Order
         return $this;
     }
 
-    public function getShippingDate(): ?\DateTimeInterface
+    public function getShippingDate()
     {
-        return $this->shippingDate;
+        return $this->shippingDate->format("Y-m-d");
     }
 
     public function setShippingDate(\DateTimeInterface $shippingDate): self

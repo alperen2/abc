@@ -3,7 +3,7 @@ fos_rest:
     body_listener: true
     format_listener:
         rules:
-            - { path: '^/', priorities: ['json', "html"], fallback_format: json}
+            - { path: '^/', priorities: ['json'], fallback_format: json}
 
     exception:
         enabled: true

@@ -4,20 +4,19 @@
 version: "3.1"
 services:
 
-    mysql:
-      image: mysql:8.0
-      container_name: abc-mysql
+    mariadb:
+      image: mariadb:10.4
+      container_name: abc-mariadb
       working_dir: /application
       volumes:
         - .:/application
       environment:
         - MYSQL_ROOT_PASSWORD=root
-        - MYSQL_DATABASE=abc
+        - MYSQL_DATABASE=abc_db
         - MYSQL_USER=abc_user
         - MYSQL_PASSWORD=abc_password
       ports:
-        - "8002:3306"
-      cmd: ["--default-authentication-plugin=mysql_native_password"]
+        - "8003:3306"
 
     webserver:
       image: nginx:alpine
