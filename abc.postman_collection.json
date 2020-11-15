@@ -1,0 +1,402 @@
+{
+	"variables": [],
+	"info": {
+		"name": "abc",
+		"_postman_id": "1542efb5-0699-c045-32b9-750af3f123cd",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "product",
+			"description": "",
+			"item": [
+				{
+					"name": "add product",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/product",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Yeni Ürün",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "9.90",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/product",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product_id",
+									"value": "6",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "quantity",
+									"value": "10",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "Ankara",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "shipping_date",
+									"value": "2020-12-31",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "deneme",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/product/13",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/product/6",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Telefon güncellendi",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get one product",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/product/6",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Telefon",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"description": "",
+			"item": [
+				{
+					"name": "update order",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/order/46",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product_id",
+									"value": "6",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "shipping_date",
+									"value": "2020-11-15",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "add order",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/order",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product_id",
+									"value": "11",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "shipping_date",
+									"value": "2021-04-04",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Bay Plaza İçerenköy Çayıryolu Sok. No:5 Kat:6 34752 Ataşehir / İstanbul",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "20",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get one order",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/order/46",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product_id",
+									"value": "10",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "shipping_date",
+									"value": "2021-04-04",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Bay Plaza İçerenköy Çayıryolu Sok. No:5 Kat:6 34752 Ataşehir / İstanbul",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "20",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/order/46",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product_id",
+									"value": "10",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "shipping_date",
+									"value": "2021-04-04",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Bay Plaza İçerenköy Çayıryolu Sok. No:5 Kat:6 34752 Ataşehir / İstanbul",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "20",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"description": "",
+			"item": [
+				{
+					"name": "check login",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/login_check",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"socrates\", \"password\":\"1234\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/token/refresh",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"alperen\", \"password\":\"1234\",  \"refresh_token\": \"953022fbed641760b812e8db12b6c7440e4cc21b42791ea764fb67104d14562743b3c46fdf481ced0c50044b2bf43e2d716e9b962271434321f3ace2bcd84d53\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
