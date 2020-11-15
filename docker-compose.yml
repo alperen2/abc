@@ -4,7 +4,7 @@
 version: "3.1"
 services:
 
-    mariadb:
+    db:
       image: mariadb:10.4
       container_name: abc-mariadb
       working_dir: /application
@@ -15,6 +15,7 @@ services:
         - MYSQL_DATABASE=abc_db
         - MYSQL_USER=abc_user
         - MYSQL_PASSWORD=abc_password
+        - MYSQL_ROOT_HOST=%
       ports:
         - "8003:3306"
 
