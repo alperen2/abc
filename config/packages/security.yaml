@@ -20,6 +20,11 @@ security:
                 success_handler:          lexik_jwt_authentication.handler.authentication_success
                 failure_handler:          lexik_jwt_authentication.handler.authentication_failure
 
+        refresh:
+            pattern: ^/api/token/refresh
+            stateless: true
+            anonymous: true
+
         api:
             pattern:   ^/api
             stateless: true
@@ -32,13 +37,10 @@ security:
             security: false
         main:
             anonymous: true
-            provider: app_user_provider
-
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
-
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
+            # provider: app_user_provider
+           
     access_control:
         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/token/refresh, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
+        
