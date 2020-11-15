@@ -37,4 +37,4 @@ Hepsinin parolası ``1234``.
 
 ilk önce check login ile login olalım.
 
-**Eğer ``Argument 1 passed to Gesdinet\JWTRefreshTokenBundle\Doctrine\RefreshTokenManager::__construct() must be an instance of Doctrine\Common\Persistence\ObjectManager, instance of Doctrine\ORM\EntityManager given, called in /home/alperen/Documents/abc_test/abc/var/cache/dev/Container2WooEXm/srcApp_KernelDevDebugContainer.php on line 921`` hatası alırsak ``use Doctrine\Persistence\ObjectManager as PersistenceObjectManager;`` dizinindeki dosyayı açalım. 15. satıra bunu ekleyelim.
+Eğer ``Argument 1 passed to Gesdinet\JWTRefreshTokenBundle\Doctrine\RefreshTokenManager::__construct() must be an instance of Doctrine\Common\Persistence\ObjectManager, instance of Doctrine\ORM\EntityManager given, called in /home/alperen/Documents/abc_test/abc/var/cache/dev/Container2WooEXm/srcApp_KernelDevDebugContainer.php on line 921`` hatası alırsak ``use Doctrine\Persistence\ObjectManager as PersistenceObjectManager;`` dizinindeki dosyayı açalım. 15. satıra bunu ekleyelim. Ve "construct" medhodunda tanımlı olan ilk parametreyi ``PersistenceObjectManager`` bu şekilde değiştirelim.
