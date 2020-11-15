@@ -1,0 +1,26 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.7"
+services:
+
+    database:
+      image: mysql:latest
+      container_name: abc-mysql
+      working_dir: /application
+      volumes:
+        - .:/application
+      environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: abc_db
+      ports:
+        - "8003:3306"
+
+    php-fpm:
+      build: phpdocker/php-fpm
+      container_name: abc-php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
+

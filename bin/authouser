@@ -1,22 +1,22 @@
 #!/usr/bin/env php
 <?php
 
-$db = new PDO('mysql:host=0.0.0.0:8002;dbname=abc_db', "root", "root");
+$db = new PDO('mysql:host=0.0.0.0:8003;dbname=abc_db', "root", "root");
 
 $users = [
     [
         'username' => "epictetos",
-        "roles" => "",
+        "roles" => "{}",
         "password" => '$argon2id$v=19$m=65536,t=4,p=1$ChI83ADSZmzPh/yFC/tW3g$TUgr3/ch7fagUKiZNN4d/C0KUAJxy4ghtFRhcYSG1k8',
     ],
     [
         'username' => "socrates",
-        "roles" => "",
+        "roles" => "{}",
         "password" => '$argon2id$v=19$m=65536,t=4,p=1$ChI83ADSZmzPh/yFC/tW3g$TUgr3/ch7fagUKiZNN4d/C0KUAJxy4ghtFRhcYSG1k8',
     ],
     [
         'username' => "zenon",
-        "roles" => "",
+        "roles" => "{}",
         "password" => '$argon2id$v=19$m=65536,t=4,p=1$ChI83ADSZmzPh/yFC/tW3g$TUgr3/ch7fagUKiZNN4d/C0KUAJxy4ghtFRhcYSG1k8',
     ]
 ];
