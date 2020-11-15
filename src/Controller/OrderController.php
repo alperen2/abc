@@ -5,8 +5,6 @@ namespace App\Controller;
 use App\Entity\Order;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
-use DateTime as GlobalDateTime;
-use DateTimeInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +14,10 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\DateTime;
 
+
+/**
+ * @Route("/api", name="api_")
+ */
 class OrderController extends AbstractController
 {
     /**
