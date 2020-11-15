@@ -32,7 +32,7 @@ Hepsinin parolası ``1234``.
 * zenon
 
 ``$ symfony serve`` ile symfony sunucumuzu ayağa kaldırıyoruz.
-
+Not: nginx çözemediğim bir sebepten dolayı hata veriyor. O yüzden symfony kurup server'ı başlatmalıyız.
 ``abc.postman_collection.json`` dosyamızı postman'a import edip gerekli endpoint'leri görebiliriz.
 
 ilk önce check login ile login olalım.
