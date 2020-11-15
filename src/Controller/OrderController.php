@@ -24,7 +24,8 @@ class OrderController extends AbstractController
      */
     public function index(OrderRepository $order): Response
     {
-        $data = $order->findAll();
+        $user = $this->getUser();
+        $data = $order->findBy(["user" => $user]);
         return $this->json($data);
     }
 
@@ -39,7 +40,7 @@ class OrderController extends AbstractController
             return $this->json($errors, Response::HTTP_BAD_REQUEST);
         }
 
-        $data = $order->find($id);
+        $data = $order->findOneBy(["id" => $id, "user" => $this->getUser()]);
 
         if (!$data) {
             $message = [
@@ -87,6 +88,7 @@ class OrderController extends AbstractController
         $order->setQuantity($quantity);
         $order->setAddress($address);
         $order->setShippingDate($shipping_date);
+        $order->setUser($this->getUser());
 
         $entityManager->persist($order);
 
@@ -118,7 +120,7 @@ class OrderController extends AbstractController
         $request->request->get("shipping_date") != Null ? $data["shipping_date"] = new \DateTime($request->request->get("shipping_date")) : false;
         extract($data);
 
-        if ($shipping_date <= date("y-m-d")) {
+        if ($shipping_date->format("Y-m-d") <= date("Y-m-d")) {
             $message = [
                 "message" => "Overdue orders cannot be updated",
             ];

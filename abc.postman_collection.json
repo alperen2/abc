@@ -28,7 +28,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Yürüyen Uçak",
+									"value": "Yeni Ürün",
 									"description": "",
 									"type": "text"
 								},
@@ -108,7 +108,7 @@
 				{
 					"name": "delete product",
 					"request": {
-						"url": "http://127.0.0.1:8000/api/product/10",
+						"url": "http://127.0.0.1:8000/api/product/13",
 						"method": "DELETE",
 						"header": [
 							{
@@ -139,7 +139,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Telefon",
+									"value": "Telefon güncellendi",
 									"description": "",
 									"type": "text"
 								}
@@ -152,7 +152,7 @@
 				{
 					"name": "get one product",
 					"request": {
-						"url": "http://127.0.0.1:8000/api/product/10",
+						"url": "http://127.0.0.1:8000/api/product/6",
 						"method": "GET",
 						"header": [
 							{
@@ -185,7 +185,7 @@
 				{
 					"name": "update order",
 					"request": {
-						"url": "http://127.0.0.1:8000/order/38",
+						"url": "http://127.0.0.1:8000/api/order/46",
 						"method": "PUT",
 						"header": [
 							{
@@ -205,7 +205,7 @@
 								},
 								{
 									"key": "shipping_date",
-									"value": "2021-04-04",
+									"value": "2020-11-15",
 									"description": "",
 									"type": "text"
 								}
@@ -218,7 +218,7 @@
 				{
 					"name": "add order",
 					"request": {
-						"url": "http://127.0.0.1:8000/api/order/38",
+						"url": "http://127.0.0.1:8000/api/order",
 						"method": "POST",
 						"header": [
 							{
@@ -232,7 +232,7 @@
 							"urlencoded": [
 								{
 									"key": "product_id",
-									"value": "10",
+									"value": "11",
 									"description": "",
 									"type": "text"
 								},
@@ -263,7 +263,7 @@
 				{
 					"name": "get one order",
 					"request": {
-						"url": "http://127.0.0.1:8000/api/order/37",
+						"url": "http://127.0.0.1:8000/api/order/46",
 						"method": "GET",
 						"header": [
 							{
@@ -308,7 +308,7 @@
 				{
 					"name": "get all orders",
 					"request": {
-						"url": "http://127.0.0.1:8000/api/order",
+						"url": "http://127.0.0.1:8000/api/order/46",
 						"method": "GET",
 						"header": [
 							{
@@ -370,7 +370,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"username\":\"alperen\", \"password\":\"1234\"}"
+							"raw": "{\"username\":\"scholar\", \"password\":\"2020\"}"
 						},
 						"description": ""
 					},
