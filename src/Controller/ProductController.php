@@ -4,20 +4,27 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Repository\ProductRepository;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
+/**
+ * @Route("/api", name="api_")
+ */
 class ProductController extends AbstractController
 {
+
     /**
      * @Route("/product", name="get_all_products", methods={"GET"})
      */
-    public function index(ProductRepository $product): Response
+    public function index(ProductRepository $product, Request $request): Response
     {
         $data = $product->findAll();
         return $this->json($data, Response::HTTP_ACCEPTED);

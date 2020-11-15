@@ -5,8 +5,6 @@ namespace App\Controller;
 use App\Entity\Order;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
-use DateTime as GlobalDateTime;
-use DateTimeInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,8 +12,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Constraints\DateTime;
 
+
+/**
+ * @Route("/api", name="api_")
+ */
 class OrderController extends AbstractController
 {
     /**
@@ -23,7 +24,8 @@ class OrderController extends AbstractController
      */
     public function index(OrderRepository $order): Response
     {
-        $data = $order->findAll();
+        $user = $this->getUser();
+        $data = $order->findBy(["user" => $user]);
         return $this->json($data);
     }
 
@@ -38,7 +40,7 @@ class OrderController extends AbstractController
             return $this->json($errors, Response::HTTP_BAD_REQUEST);
         }
 
-        $data = $order->find($id);
+        $data = $order->findOneBy(["id" => $id, "user" => $this->getUser()]);
 
         if (!$data) {
             $message = [
@@ -86,6 +88,7 @@ class OrderController extends AbstractController
         $order->setQuantity($quantity);
         $order->setAddress($address);
         $order->setShippingDate($shipping_date);
+        $order->setUser($this->getUser());
 
         $entityManager->persist($order);
 
@@ -117,7 +120,7 @@ class OrderController extends AbstractController
         $request->request->get("shipping_date") != Null ? $data["shipping_date"] = new \DateTime($request->request->get("shipping_date")) : false;
         extract($data);
 
-        if ($shipping_date <= date("y-m-d")) {
+        if ($shipping_date->format("Y-m-d") <= date("Y-m-d")) {
             $message = [
                 "message" => "Overdue orders cannot be updated",
             ];

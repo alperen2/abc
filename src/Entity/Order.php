@@ -39,6 +39,12 @@ class Order
      */
     private $shippingDate;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -88,6 +94,18 @@ class Order
     public function setShippingDate(\DateTimeInterface $shippingDate): self
     {
         $this->shippingDate = $shippingDate;
+
+        return $this;
+    }
+
+    public function getUser()
+    {
+        return $this->user->getUsername();
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
