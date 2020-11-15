@@ -36,3 +36,5 @@ Hepsinin parolası ``1234``.
 ``abc.postman_collection.json`` dosyamızı postman'a import edip gerekli endpoint'leri görebiliriz.
 
 ilk önce check login ile login olalım.
+
+**Eğer ``Argument 1 passed to Gesdinet\JWTRefreshTokenBundle\Doctrine\RefreshTokenManager::__construct() must be an instance of Doctrine\Common\Persistence\ObjectManager, instance of Doctrine\ORM\EntityManager given, called in /home/alperen/Documents/abc_test/abc/var/cache/dev/Container2WooEXm/srcApp_KernelDevDebugContainer.php on line 921`` hatası alırsak ``use Doctrine\Persistence\ObjectManager as PersistenceObjectManager;`` dizinindeki dosyayı açalım. 15. satıra bunu ekleyelim.
