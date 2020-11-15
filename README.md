@@ -1,4 +1,5 @@
 ``git clone https://github.com/alperen2/abc.git``
+``composer install``
 
 #### JWT token için gerekli olan key'lerin oluşturulması
 ``$ openssl genpkey -out config/jwt/private.pem -aes256 -algorithm rsa -pkeyopt rsa_keygen_bits:4096``
